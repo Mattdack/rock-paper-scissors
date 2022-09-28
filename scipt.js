@@ -2,7 +2,7 @@ var computerChoice;
 var wins = 0;
 var ties = 0;
 var losses = 0;
-var contPlay = true;
+var contPlay = false;
 
 function getRandomInt(){
     return Math.floor(Math.random() * 3);
@@ -19,7 +19,7 @@ function userWins() {
 }
 
 // User enters website and is notfied they have entered a tournament
-window.alert("This is the ROCK, PAPER, SCISSORS Virtual Tournament. After closing this message, you will be prompted for input. A computer will respond and your score will be tracked! Continue to enter!");
+contPlay = window.confirm("This is the ROCK, PAPER, SCISSORS Virtual Tournament. After closing this message, you will be prompted for input. A computer will respond and your score will be tracked! Continue to enter!");
 
 //If User enters a non-R, P, or S value, they are notified to re-enter a new entry. Correct entries proceed
 while (contPlay) {
@@ -28,12 +28,11 @@ var userChoice = window.prompt("Enter R, P, or S for your entry.");
 userChoice = userChoice.toUpperCase();
 if (userChoice === "R" || userChoice === "P" || userChoice === "S") {
     // After user enters a valid entry, the computer generates a random option to play against
-   
-        var x = getRandomInt();
-        if (x = 0){
+        x = getRandomInt(); 
+        if (x == 0){
             computerChoice = "R";
             window.alert("Your virtual opponent chose R!");
-        } else if (x = 1){
+        } else if (x == 1){
             computerChoice = "P";
             window.alert("Your virtual opponent chose P!");
         } else {
